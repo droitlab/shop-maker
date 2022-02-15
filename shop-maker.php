@@ -61,4 +61,3 @@ function sh_maker() { // phpcs:ignore WordPress.NamingConventions.ValidFunctionN
 
 // Global for backwards compatibility.
 $GLOBALS['shop_maker'] = sh_maker();
-
