@@ -1,0 +1,14 @@
+{
+    "name": "woocommerce/shop-maker",
+    "type": "wordpress-plugin",
+    "description": "Shop Maker based on WooCommerce.",
+    "autoload": {
+    },
+    "authors": [
+        {
+            "name": "joy-mishu",
+            "email": "mishu@droitlab.com"
+        }
+    ],
+    "require": {}
+}
