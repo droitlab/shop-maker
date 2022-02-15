@@ -49,15 +49,16 @@ if ( ! defined( 'SH_MAKER_PLUGIN_FILE' ) ) {
 require __DIR__ . '/vendor/autoload.php';
 
 /**
- * Returns the main instance of WC.
+ * Returns the main instance of shop_maker.
  *
- * @since  2.1
- * @return WooCommerce
+ * @since [SH_MAKER_VERSION]
+ * 
+ * @return shop_maker
  */
 function sh_maker() { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
-	return \Sh_Maker\DroitLab::instance();
+	return \ShopMaker\Shop_Maker::instance();
 }
 
 // Global for backwards compatibility.
-$GLOBALS['sh_maker'] = sh_maker();
+$GLOBALS['shop_maker'] = sh_maker();
 

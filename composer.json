@@ -3,6 +3,9 @@
     "type": "wordpress-plugin",
     "description": "Shop Maker based on WooCommerce.",
     "autoload": {
+        "classmap": [
+            "includes"
+        ]
     },
     "authors": [
         {
