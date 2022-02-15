@@ -7,8 +7,6 @@
 .travis.yml
 npm-debug.log
 /bin/
-/tests/bootstrap.php
-/tests/test-sample.php
 phpcs.ruleset.xml
 phpunit.xml.dist
 composer.phar
