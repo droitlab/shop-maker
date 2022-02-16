@@ -80,7 +80,7 @@ final class Shop_Maker {
 	 * @return void
 	 */
 	private function define_constants() {
-		$this->define( 'SH_MAKER_ABSPATH', dirname( SH_MAKER_PLUGIN_FILE ) . '/' );
+		$this->define( 'SH_MAKER_ABSPATH', dirname( SH_MAKER_PLUGIN_FILE ) );
 		$this->define( 'SH_MAKER_PLUGIN_BASENAME', plugin_basename( SH_MAKER_PLUGIN_FILE ) );
 		$this->define( 'SH_MAKER_VERSION', $this->version );
 		$this->define( 'SH_MAKER_MINIMUM_ELEMENTOR_VERSION', '0.1' );
@@ -110,7 +110,15 @@ final class Shop_Maker {
 	 * @return void
 	 */
 	public function includes() {
+		require_once SH_MAKER_ABSPATH . '/includes/functions.php';
 
+		if ( $this->is_request( 'admin' ) ) {
+			\ShopMaker\Admin\Admin::instance();
+		}
+
+		if ( sh_maker_is_active( sh_maker_gutenberg_module_slug() ) ) {
+			require_once SH_MAKER_ABSPATH . '/modules/gutenberg/gutenberg.php';
+		}
 	}
 
 	/**
@@ -125,6 +133,10 @@ final class Shop_Maker {
 	 * @return void
 	 */
 	public function on_plugins_loaded() {
+		if ( sh_maker_is_active( sh_maker_gutenberg_module_slug() ) && sh_maker_is_active_elementor() ) {
+			require_once SH_MAKER_ABSPATH . '/modules/elementor/elementor.php';
+		}
+
 		do_action( 'shop_maker_loaded' );
 	}
 
@@ -234,7 +246,7 @@ final class Shop_Maker {
 	}
 
 	/**
-	 * Return the WC API URL for a given request.
+	 * Return the API URL for a given request.
 	 *
 	 * @since [SH_MAKER_VERSION]
 	 *

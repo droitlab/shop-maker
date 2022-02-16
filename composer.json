@@ -4,7 +4,8 @@
     "description": "Shop Maker based on WooCommerce.",
     "autoload": {
         "classmap": [
-            "includes"
+            "includes",
+            "modules"
         ]
     },
     "authors": [
