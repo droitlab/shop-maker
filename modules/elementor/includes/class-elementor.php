@@ -64,7 +64,7 @@ final class Elementor {
 	 * @return void
 	 */
 	public function includes() {
-
+		\ShopMaker\Elementor\Manager::instance();
 	}
 
 	/**
