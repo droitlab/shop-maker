@@ -2,7 +2,7 @@
 /**
  * Shop Maker Elementor Widgets Manger.
  *
- * @class    Manager
+ * @class    Elementor
  * @package  ShopMaker\Elementor\Manager
  * @version  [SH_MAKER_VERSION]
  */
@@ -19,26 +19,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Shop Maker widgets manager.
+ * Shop Maker elementor manager.
  *
- * Shop maker widgets manager handler class is responsible for registering and
- * initializing all the supported shop-maker widgets.
+ * Shop maker elementor manager handler class is responsible for registering and
+ * initializing all the supported shop-maker elementor.
  *
  * @since [SH_MAKER_VERSION]
  */
-class Manager {
-
-	/**
-	 * Widget types.
-	 *
-	 * Holds the list of all the widget types.
-	 *
-	 * @since [SH_MAKER_VERSION]
-	 * @access private
-	 *
-	 * @var Widget_Base[]
-	 */
-	//private $_widget_types = null;
+class Elementor {
 
 	/**
 	 * The single instance of the class.
@@ -75,7 +63,7 @@ class Manager {
 	 * @return void
 	 */
 	public function __construct() {
-		add_action( 'elementor/widgets/register', array( $this, 'regiter_widgets' ) );
+		add_action( 'elementor/elements/categories_registered', array( $this, 'categories_registered' ) );
 	}
 
 	/**
@@ -88,21 +76,22 @@ class Manager {
 	 *
 	 * @return void
 	 */
-	public function regiter_widgets( $class_instance ) {
+	public function categories_registered( $elements_manager ) {
 
-		$widget_lists = $this->get_widget_lists();
-		$this->_widget_types = array();
-
-		foreach ( $widget_lists as $widget_key => $widget ) {
-			$format_key = str_replace( '-', '_',  $widget_key );
-			$class_name = ucwords( $format_key, '_' );
-			$namespace = '\\ShopMaker\\Elementor\\Widgets\\'.$class_name;
-
-			$class_instance->register( $namespace::instance() );
+		$categories = $this->category_lists();
+		
+		foreach ( $categories as $category ) {
+			$elements_manager->add_category(
+				$category['name'],
+				[
+					'title' => $category['title'],
+					'icon' => $category['icon'],
+				]
+			);
 		}
 
 		/**
-		 * After widgets registered.
+		 * After categories registered.
 		 *
 		 * Fires after Elementor widgets are registered.
 		 *
@@ -110,7 +99,7 @@ class Manager {
 		 *
 		 * @param Manager $this The widgets manager.
 		 */
-		do_action( 'shop_maker_after_widgets_registered', $this );
+		do_action( 'shop_maker_after_categories_registered', $elements_manager );
 	}
 
 	/**
@@ -122,29 +111,22 @@ class Manager {
 	 *
 	 * @return array
 	 */
-	public function get_widget_lists() {
-		$widget_lists = array(
-			'alert-notice' => array(
-				'cat'    => 'general',
-				'title'  => __( 'Alert', 'shop-maker' ),
-				'icon'   => 'hm hm-advanced-heading',
-				'is_pro' => false,
-			),
-			'accordion' => array(
-				'cat'    => 'general',
-				'title'  => __( 'Accordion', 'shop-maker' ),
-				'icon'   => 'hm hm-advanced-heading',
-				'is_pro' => false,
+	public function category_lists() {
+		$category_lists = array(
+			'sh-maker-elements' => array(
+				'name'  => 'sh-maker-elements',
+				'title' => esc_html__( 'Shop Maker', 'plugin-name' ),
+				'icon'  => 'hm hm-advanced-heading',
 			),
 		);
 
 		/**
-		 * Shop-Maker widget lists.
+		 * Shop-Maker category lists.
 		 *
 		 * @since [SH_MAKER_VERSION]
 		 *
-		 * @param array $widget_lists Widgets lists.
+		 * @param array $category_lists Widgets lists.
 		 */
-		return apply_filters( 'shop_maker_widget_lists', $widget_lists );
+		return apply_filters( 'shop_maker_category_lists', $category_lists );
 	}
 }

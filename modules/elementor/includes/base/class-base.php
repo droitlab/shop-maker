@@ -16,43 +16,43 @@ use Elementor\Widget_Base;
 abstract class Base extends Widget_Base {
 	public function get_name() {
 
-        /**
-         * Automatically generate widget name from class
-         *
-         * Card will be card
-         * Blog_Card will be blog-card
-         */
+		/**
+		 * Automatically generate widget name from class
+		 *
+		 * Card will be card
+		 * Blog_Card will be blog-card
+		 */
 		$name = str_replace( strtolower('ShopMaker\\Elementor\\Widgets'), '', strtolower($this->get_class_name()) );
-       
-        $name = str_replace( '_', '-', $name );
-        $name = ltrim( $name, '\\' );
+	   
+		$name = str_replace( '_', '-', $name );
+		$name = ltrim( $name, '\\' );
 
-        return 'sh-maker-' . $name;
-    }
-
-	/**
-     * Get widget categories.
-     *
-     * @since 1.0.0
-     * @access public
-     *
-     * @return array Widget categories.
-     */
-    public function get_categories() {
-        return [ 'general' ];
-    }
+		return 'sh-maker-' . $name;
+	}
 
 	/**
-     * Register content controls
-     *
-     * @return void
-     */
-    abstract protected function register_content_controls();
+	 * Get widget categories.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return array Widget categories.
+	 */
+	public function get_categories() {
+		return [ 'sh-maker-elements', 'general' ];
+	}
 
-    /**
-     * Register style controls
-     *
-     * @return void
-     */
-    abstract protected function register_style_controls();
+	/**
+	 * Register content controls
+	 *
+	 * @return void
+	 */
+	abstract protected function register_content_controls();
+
+	/**
+	 * Register style controls
+	 *
+	 * @return void
+	 */
+	abstract protected function register_style_controls();
 }

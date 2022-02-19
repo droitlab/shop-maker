@@ -1,0 +1,24 @@
+.wp-block[data-type="frontrom/plumber-about-contact"] {
+	margin-top: 0;
+	margin-bottom: 0;
+	
+	.wp-block {
+		max-width: 100%;
+	}
+
+	.block-list-appender {
+		display: none;
+	}
+
+}
+
+
+.frontrom-about-contact-section {
+    .icon-text {
+    	> .frontrom-col-content-align
+    	> .block-editor-inner-blocks
+    	> .block-editor-block-list__layout {
+    		align-items: center;
+    	}
+    }
+}

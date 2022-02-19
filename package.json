@@ -1,0 +1,28 @@
+{
+  "name": "Shop Maker",
+  "version": "0.1.0",
+  "description": "Shop-Maker based on WooCommerce",
+  "scripts": {
+    "start": "NODE_ENV=development webpack --config .dev/scripts/start.js --progress --colors --watch",
+    "build": "NODE_ENV=production webpack --config .dev/scripts/start.js --progress --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/droitlab/shop-maker"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/droitlab/shop-maker"
+  },
+  "homepage": "https://github.com/droitlab/shop-maker",
+  "devDependencies": {
+    "@wordpress/scripts": "^21.0.2",
+    "classnames": "^2.3.1",
+    "filemanager-webpack-plugin": "^6.1.7",
+    "glob": "^7.2.0",
+    "lodash": "^4.17.21",
+    "shelljs": "^0.8.5",
+    "uuidv4": "^6.2.12"
+  }
+}
