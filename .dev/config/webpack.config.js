@@ -23,14 +23,14 @@ if ( process.env.NODE_ENV == 'production' ) {
 } 
 
 // options is optional
-const styleScss = glob.sync("./src/**/*(style.scss)")
+const gStyleScss = glob.sync(`${paths.gSrc}/**/*(style.scss)`)
 	.reduce(function(acc, path) {
 		acc.push(path);
 
 		return acc;
 	}, []) 
 
-entryPoint['./dist/style']  = styleScss;
+entryPoint['./dist/style']  = gStyleScss;
 entryPoint['./dist/blocks'] = [paths.gBlocksMain];
 
 // Export configuration.
@@ -40,8 +40,6 @@ const Modules = {
 	entry: entryPoint,
 	output: {
 		pathinfo: true,
-		chunkFilename: 'dist/[chunkhash].chunk-bundle.js',
-        jsonpFunction: 'ShopMakerWebpack',
 		path: paths.pluginRoot,
 		publicPath: '/',
 		filename: '[name].js'
@@ -53,27 +51,12 @@ const Modules = {
      	},
     },
 
-	node: {
-		fs: 'empty'
-	},
-
 	module: {
 		...defaultConfig.module,
 		rules: [
 			...defaultConfig.module.rules
 		]
 	},
-
-	resolve: {
-		extensions: ['.js', '.json'],
-        alias: {
-			'@components': paths.components,
-			'@js': paths.js,
-			'@blocks': paths.blocks,
-			'@utils': paths.utils,
-			'@pluginPage': paths.pluginPage
-        }
-    },
 
 	// Add plugins.
 	plugins: [
@@ -98,7 +81,7 @@ const Modules = {
 					],
 					copy: [
 				        { 
-				          	source: './src/js', 
+				          	source: `${paths.gSrc}/js`, 
 				          	destination: './dist/js' 
 				        }
 			        ]

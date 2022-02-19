@@ -20,7 +20,7 @@ import { Component, Fragment } from '@wordpress/element';
 /**
  * Block edit function
  */
-const Edit = ( props ) {
+const Edit = ( props ) => {
 	const {
 		clientId,
 		attributes,

@@ -8,7 +8,7 @@ import { getCategories, setCategories } from '@wordpress/blocks';
  */
 import { BrandIcon } from './brand-assets';
 
-export const RegisterCategories = () {
+export const RegisterCategories = () => {
 	setCategories([
 		{
 			slug: 'ShopMaker',

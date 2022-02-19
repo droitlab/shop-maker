@@ -8,7 +8,7 @@ import { Toolbar } from '@wordpress/components';
 import { createBlock } from '@wordpress/blocks';
 import { select, dispatch } from '@wordpress/data';
 
-const Controls = ( props ) {
+const Controls = ( props ) => {
 	const {
 		clientId,
 		attributes,

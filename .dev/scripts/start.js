@@ -6,7 +6,7 @@
  */
 'use strict';
 
-const start = require( '../config/webpack.config.dev.js' );
+const start = require( '../config/webpack.config.js' );
 
 const paths = require( './../config/paths' );
 const shell = require('shelljs');

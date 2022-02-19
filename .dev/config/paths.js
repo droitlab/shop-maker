@@ -24,7 +24,7 @@ const paths = {
 	gComponents: gutenBergPath( './src/components' ),
 	gJs: gutenBergPath( './src/js' ),
 	gRoot: gutenBergPath( '.' ),
-	pluginRoot: pluginPath( '.' ), // We are in ./dist folder already so the path '.' resolves to ./dist/.
+	pluginRoot: pluginPath( '.' ) // We are in ./dist folder already so the path '.' resolves to ./dist/.
 };
 
 module.exports = paths;
