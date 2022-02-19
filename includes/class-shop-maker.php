@@ -82,6 +82,7 @@ final class Shop_Maker {
 	private function define_constants() {
 		$this->define( 'SH_MAKER_ABSPATH', dirname( SH_MAKER_PLUGIN_FILE ) );
 		$this->define( 'SH_MAKER_PLUGIN_BASENAME', plugin_basename( SH_MAKER_PLUGIN_FILE ) );
+		$this->define( 'SH_MAKER_PLUGIN_URL', plugin_dir_url( SH_MAKER_PLUGIN_FILE ) );
 		$this->define( 'SH_MAKER_VERSION', $this->version );
 		$this->define( 'SH_MAKER_MINIMUM_ELEMENTOR_VERSION', '0.1' );
 	}

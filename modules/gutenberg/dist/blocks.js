@@ -412,8 +412,8 @@ const registerBlock = block => {
     name,
     settings
   } = block;
-  (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.registerBlockType)(`ShopMaker/${name}`, {
-    category: ShopMaker,
+  (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.registerBlockType)(`sh-maker/${name}`, {
+    category: 'shop-maker',
     ...settings
   });
 };
@@ -453,7 +453,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const RegisterCategories = () => {
   (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.setCategories)([{
-    slug: 'ShopMaker',
+    slug: 'shop-maker',
     title: 'Shop Maker',
     icon: _brand_assets__WEBPACK_IMPORTED_MODULE_1__.BrandIcon
   }, ...(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.getCategories)()]);

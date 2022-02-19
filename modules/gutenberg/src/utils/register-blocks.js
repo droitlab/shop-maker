@@ -19,8 +19,8 @@ const registerBlock = ( block ) => {
 
 	const { name, settings } = block;
 	
-	registerBlockType( `ShopMaker/${name}`, {
-		category: ShopMaker,
+	registerBlockType( `sh-maker/${name}`, {
+		category: 'shop-maker',
 		...settings,
 	} );
 };

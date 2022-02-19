@@ -11,7 +11,7 @@ import { BrandIcon } from './brand-assets';
 export const RegisterCategories = () => {
 	setCategories([
 		{
-			slug: 'ShopMaker',
+			slug: 'shop-maker',
 			title: 'Shop Maker',
 			icon: BrandIcon,
 		},

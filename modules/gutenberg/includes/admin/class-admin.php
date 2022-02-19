@@ -7,7 +7,7 @@
  * @package ShopMaker\Admin
  */
 
-namespace ShopMaker\Admin;
+namespace ShopMaker\Gutenberg\Admin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -62,10 +62,7 @@ class Admin {
 	 * @return void
 	 */
 	public function includes() {
-		// Module settings helper functions.
-		require_once SH_MAKER_ABSPATH . '/includes/admin/helper/modules.php';
-
-		\ShopMaker\Admin\Menus::instance();
+		\ShopMaker\Gutenberg\Admin\Assets::instance();
 	}
 
 }
