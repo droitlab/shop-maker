@@ -67,6 +67,8 @@ final class Gutenberg {
 		if ( $this->is_request( 'admin' ) ) {
 			\ShopMaker\Gutenberg\Admin\Admin::instance();
 		}
+
+		\ShopMaker\Gutenberg\Block_Type_Controller::instance();
 	}
 
 	/**

@@ -69,20 +69,12 @@ if ( ! class_exists( 'Assets', false ) ) :
 		public function block_assets() {
 			$dependencies = require_once SH_MAKER_G_DIST_PATH . '/blocks.asset.php';
 
-			// wp_enqueue_style( 
-			// 	frontrom_prefix() . '-block-editor-assets', 
-			// 	FRONTROM_DIST_URL . '/editor.css', 
-			// 	false, 
-			// 	filemtime( FRONTROM_DIST_PATH . '/editor.css' ), 
-			// 	'all' 
-			// );
-
-			wp_enqueue_script( 
-				'sh-maker-blocks', 
-				SH_MAKER_G_DIST_URL . '/blocks.js', 
-				$dependencies['dependencies'], 
-				$dependencies['version'], 
-				true 
+			wp_enqueue_script(
+				'sh-maker-blocks',
+				SH_MAKER_G_DIST_URL . '/blocks.js',
+				$dependencies['dependencies'],
+				$dependencies['version'],
+				true
 			);
 		}
 
@@ -95,7 +87,6 @@ if ( ! class_exists( 'Assets', false ) ) :
 		 */
 		public function admin_styles() {
 			global $wp_scripts;
-
 		}
 
 		/**
@@ -106,9 +97,7 @@ if ( ! class_exists( 'Assets', false ) ) :
 		 * @return void
 		 */
 		public function admin_scripts() {
-
 		}
-
 	}
 
 endif;

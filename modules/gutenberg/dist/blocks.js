@@ -16,7 +16,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  "name": "sh-maker-contact",
+  "name": "contact",
   "attributes": {
     "text": {
       "type": "string",
@@ -156,13 +156,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./edit */ "./modules/gutenberg/src/blocks/contact/edit.js");
 /* harmony import */ var _block__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block */ "./modules/gutenberg/src/blocks/contact/block.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./save */ "./modules/gutenberg/src/blocks/contact/save.js");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
 /**
  * Internal dependencies
  */
-
 
 
 /**
@@ -189,16 +187,13 @@ const attributes = { ..._block__WEBPACK_IMPORTED_MODULE_1__["default"].attribute
  */
 
 const settings = {
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Contact', 'frontrom'),
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Contact', 'frontrom'),
   attributes,
   supports: {
     inserter: true
   },
-
-  getEditWrapperProps(attributes) {},
-
-  edit: _edit__WEBPACK_IMPORTED_MODULE_0__["default"],
-  save: _save__WEBPACK_IMPORTED_MODULE_2__["default"]
+  getEditWrapperProps: attributes => {},
+  edit: _edit__WEBPACK_IMPORTED_MODULE_0__["default"]
 };
 
 
@@ -259,41 +254,6 @@ const Inspector = props => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Inspector);
-
-/***/ }),
-
-/***/ "./modules/gutenberg/src/blocks/contact/save.js":
-/*!******************************************************!*\
-  !*** ./modules/gutenberg/src/blocks/contact/save.js ***!
-  \******************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-
-
-/**
- * WordPress dependencies
- */
-
-
-const save = props => {
-  const {
-    clientId,
-    attributes,
-    className,
-    isSelected,
-    setAttributes
-  } = props;
-  const {
-    text
-  } = attributes;
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (save);
 
 /***/ }),
 

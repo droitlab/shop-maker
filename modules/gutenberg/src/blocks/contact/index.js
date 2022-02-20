@@ -3,7 +3,6 @@
  */
 import edit from './edit';
 import metadata from './block';
-import save from './save';
 
 
 /**
@@ -32,11 +31,10 @@ const settings = {
 	supports: {
 		inserter: true,
 	},
-	getEditWrapperProps( attributes ) {
+	getEditWrapperProps: ( attributes ) => {
 		
 	},
-	edit,
-	save
+	edit
 };
 
 export { name, category, settings };
